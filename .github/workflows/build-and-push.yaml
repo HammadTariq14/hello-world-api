@@ -1,9 +1,8 @@
 name: Build and Push to ACR
 
 on:
-  pull_request:
+  push:
     branches: [main]
-    types: [closed]
   workflow_dispatch:
 
 permissions:
@@ -16,7 +15,6 @@ env:
 
 jobs:
   build-and-push:
-    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     environment: dev
 
