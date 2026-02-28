@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build-and-push:
     uses: HammadTariq14/devops-template/.github/workflows/build-and-push.yaml@main
